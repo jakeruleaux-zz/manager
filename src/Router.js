@@ -1,12 +1,25 @@
 import React from 'react';
 import { Scene, Router } from 'react-native-router-flux';
 import LogInForm from './components/LogInForm';
+import EmployeeList from './components/EmployeeList';
 
 const RouterComponent = () => {
   return (
-    <Router sceneStyle={{ paddingTop: 5 }}>
-      <Scene key="root" >
-        <Scene key="login" component={LogInForm} title="Please Login" />
+    <Router sceneStyle={{ paddingTop: 65 }}>
+
+      <Scene key="auth">
+          <Scene key="login" component={LogInForm} title="Please Login" />
+      </Scene>
+
+      <Scene key="main">
+        <Scene
+          onRight={() => console.log("right")}
+          rightTitle="Add"
+          key="employeeList"
+          component={EmployeeList}
+          title="Employees"
+          />
+
       </Scene>
     </Router>
   );
