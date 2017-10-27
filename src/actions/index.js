@@ -3,7 +3,7 @@ import {
   EMAIL_CHANGED,
   PASSWORD_CHANGED,
   LOGIN_USER_SUCCESS,
-  LOG_USER_FAIL
+  LOGIN_USER_FAIL
  } from './types';
 
 export const emailChanged = (text) => {
@@ -33,7 +33,7 @@ export const loginUser = ({ email, password }) => {
 };
 
 const loginUserFail = (dispatch) => {
-  dispatch({ type: LOG_USER_FAIL });
+  dispatch({ type: LOGIN_USER_FAIL });
 };
 
 const loginUserSuccess = (dispatch, user) => {
